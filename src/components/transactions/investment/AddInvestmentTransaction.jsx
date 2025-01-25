@@ -28,40 +28,30 @@ const AddInvestmentTransaction = ({ inAcctId, selOptions, allOptions, onAddTrans
     useEffect(() => {
         setShowTicker(
             transactionType && (transactionType == 1 || transactionType == 2 || transactionType == 4
-                || transactionType == 5 || transactionType == 7 || transactionType == 9 || transactionType == 10)
+                || transactionType == 5 || transactionType == 7 || transactionType == 8 
+                || transactionType == 9 || transactionType == 10)
         )
 
         setShowQuantity(
             transactionType && (transactionType == 1 || transactionType == 2 || transactionType == 5
-                || transactionType == 7 || transactionType == 9 || transactionType == 10)
+                || transactionType == 7 || transactionType == 8 || transactionType == 9 || transactionType == 10)
         )
 
         setShowQuote(
-            transactionType && (transactionType == 2 || transactionType == 10)
+            transactionType && (transactionType == 2 || transactionType == 8 || transactionType == 10)
         )
 
         setShowTransAmt(
             transactionType && (transactionType == 1 || transactionType == 2 || transactionType == 3
                 || transactionType == 4 || transactionType == 5 || transactionType == 6 
-                || transactionType == 7 || transactionType == 9 || transactionType == 10
-                || transactionType == 11 || transactionType == 12 || transactionType == 13)
+                || transactionType == 7 || transactionType == 8 || transactionType == 9 
+                || transactionType == 10 || transactionType == 11 || transactionType == 12 || transactionType == 13)
         )
 
         setShowTransferAcct(
             transactionType && (transactionType == 11 || transactionType == 12)
         )
     }, [transactionType])
-
-    // if (that.value == "ADD" || that.value == "BUY" || that.value == "DEPOSIT" || 
-    // that.value == "DIVIDEND" || that.value == "ENDING_BALANCE" || 
-    // that.value == "INTEREST" ||	that.value == "OPENING_BALANCE" || that.value == "REMOVE" || that.value == "SELL" || 
-    // that.value == "XIN" || that.value == "XOUT" || that.value == "WITHDRAW") {
-
-    // if (that.value == "ADD" || that.value == "BUY" || that.value == "ENDING_BALANCE" || 
-    // that.value == "OPENING_BALANCE" || that.value == "REMOVE" || that.value == "SELL") {
-
-    // if (that.value == "ADD" || that.value == "BUY" || that.value == "DIVIDEND" || that.value == "ENDING_BALANCE" || 
-    // that.value == "OPENING_BALANCE" || that.value == "REMOVE" || that.value == "SELL") {
 
     const [transTypes] = useState([
         {

@@ -45,11 +45,14 @@ const CreditUploadTransactions = () => {
         setTransactions(data.transactions)
         return data
     }
-
+   
     const [file, setFile] = useState('');
     const onFileChange = e => {
         setFile(e.target.files[0]);
+        setFileName(e.target.files[0].name);
     };
+
+    const [fileName, setFileName] = useState("Choose File...");
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -95,7 +98,7 @@ const CreditUploadTransactions = () => {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group>
-                    <Form.File id="file" label="Upload file..." onChange={onFileChange} custom />
+                    <Form.File id="file" label={fileName} onChange={onFileChange} custom />
                 </Form.Group>
             </Form>
 

@@ -36,11 +36,15 @@ const EditUploadedCreditTransaction = ({ inTransactionId, acctId, acctName, inTr
     }, [inTransDate])
 
     const saveTransaction = (transactionId, acctId, transDate, transAmt, description, inDescription, transferAcctId, decision) => {
+        console.log("Decision in saveTransaction")
+        console.log(decision)
         updateTransaction(transactionId, acctId, transDate, transAmt, description, inDescription, transferAcctId, decision)
     }
 
     const onSubmit = (e) => {
         e.preventDefault()
+        console.log('Decision in obsubmit')
+        console.log(decision)
         saveTransaction({ transactionId, acctId, transDate, transAmt, description, inDescription, transferAcctId, decision })
     }
 
@@ -122,7 +126,7 @@ const EditUploadedCreditTransaction = ({ inTransactionId, acctId, acctName, inTr
 
                     <Button variant="primary"
                         onClick={() => {
-                            saveTransaction({ transactionId, acctId, transDate, transAmt, description, inDescription, transferAcctId })
+                            saveTransaction({ transactionId, acctId, transDate, transAmt, description, inDescription, transferAcctId, decision })
                         }}>Update</Button>
                     {' '}
                     <Button variant="secondary" type="submit"

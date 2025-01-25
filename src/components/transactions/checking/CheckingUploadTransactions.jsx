@@ -47,7 +47,10 @@ const CheckingUploadTransactions = () => {
     const [file, setFile] = useState('');
     const onFileChange = e => {
         setFile(e.target.files[0]);
+        setFileName(e.target.files[0].name);
     };
+
+    const [fileName, setFileName] = useState("Choose File...");
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -93,7 +96,7 @@ const CheckingUploadTransactions = () => {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group>
-                    <Form.File id="file" onChange={onFileChange} />
+                    <Form.File id="file" label={fileName} onChange={onFileChange} custom />
                 </Form.Group>
             </Form>
 

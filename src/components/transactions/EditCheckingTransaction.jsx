@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col'
 
-const EditCheckingTransaction = ({ inTransactionId, acctId, acctName, inTransDate, inCheckNumber, inTransAmt, inDescription, inTransferAcctId, transferAcctName, selOptions, allOptions, hideEditTransaction, updateTransaction }) => {
+const EditCheckingTransaction = ({ inTransactionId, acctId, acctName, inTransDate, inCheckNumber, inTransAmt, inDescription, inTransferAcctId, transferAcctName, selOptions, allOptions, hideEditTransaction, updateTransaction, updateCakeTransaction }) => {
 
     const [transactionId, setTransactionId] = useState(0)
     useEffect(() => {
@@ -41,6 +41,13 @@ const EditCheckingTransaction = ({ inTransactionId, acctId, acctName, inTransDat
         // console.log(inTransferAcctId)
         updateTransaction(transactionId, acctId, transDate, checkNumber, transAmt, description, transferAcctId)
     }
+
+    const saveCakeTransaction = (transactionId, acctId, transDate, checkNumber, transAmt, description, transferAcctId) => {
+        console.log(description)
+        // console.log(inTransferAcctId)
+        updateCakeTransaction(transactionId, acctId, transDate, checkNumber, transAmt, description, transferAcctId)
+    }
+
     const onSubmit = (e) => {
         e.preventDefault()
         saveTransaction({ acctId, transDate, checkNumber, transAmt, description, transferAcctId })
@@ -132,9 +139,9 @@ const EditCheckingTransaction = ({ inTransactionId, acctId, acctName, inTransDat
                             console.log("Click AddTransaction")
                             console.log(transferAcctId)
                             console.log(description)
-                            saveTransaction({ transactionId, acctId, transDate, checkNumber, transAmt, description, transferAcctId })
+                            saveCakeTransaction({ transactionId, acctId, transDate, checkNumber, transAmt, description, transferAcctId })
                             // saveTransaction({ acctId, transDate, checkNumber, transAmt, description })
-                        }}>Update</Button>
+                        }}>Cake</Button>
                     {' '}
                     <Button variant="secondary" type="submit"
                         onClick={() => {

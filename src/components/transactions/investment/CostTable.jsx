@@ -1,8 +1,7 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
 
-const InvestmentTransactionTable = ({ transactions, deleteTransaction, acctName, selOptions, allOptions, updateTransaction }) => {
+const CostTable = ({ transactions }) => {
 
     return (
         <>
@@ -20,7 +19,6 @@ const InvestmentTransactionTable = ({ transactions, deleteTransaction, acctName,
                         <th style={{ textAlign: 'right' }}>Transfer Account</th>
                         <th style={{ textAlign: 'right' }}>Share Bal</th>
                         <th style={{ textAlign: 'right' }}>Account Balance</th>
-                        <th style={{ textAlign: 'center' }}>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,12 +38,6 @@ const InvestmentTransactionTable = ({ transactions, deleteTransaction, acctName,
                             <td style={{ textAlign: 'right' }}>{transaction.transferAcct}</td>
                             <td style={{ textAlign: 'right' }}>{transaction.balanceQty ? parseFloat(transaction.balanceQty).toFixed(6) : ''}</td>
                             <td style={{ textAlign: 'right' }}>{parseFloat(transaction.balanceAmt).toFixed(2)}</td>
-                            <td style={{ textAlign: 'center' }}>
-                                <Button variant="outline-info" size="sm"
-                                    onClick={() => {
-                                        deleteTransaction(transaction.transactionId)
-                                    }}>Delete</Button>
-                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -55,4 +47,4 @@ const InvestmentTransactionTable = ({ transactions, deleteTransaction, acctName,
 
 }
 
-export default InvestmentTransactionTable
+export default CostTable

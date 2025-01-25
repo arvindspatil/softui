@@ -47,12 +47,6 @@ const UploadedCheckingTransactionTable = ({ transactions, deleteTransaction, acc
         updateTransaction({transactionId, acctId, transDate, checkNumber, transAmt, description, inDescription, transferAcctId, decision})
     }
 
-    // const wrapperUpdate = (trans) => {
-    //     console.log(trans)
-    //     updateTransaction(trans)
-    //     // updateTransaction(transactionId, acctId, transDate, checkNumber, transAmt, description, inDescription, transferAcctId, decision)
-    // }
-
     return (
         <>
             {showEditTransaction && <EditUploadedCheckingTransaction

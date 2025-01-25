@@ -28,7 +28,8 @@ const CheckingTransactions = () => {
                 acct.acctType === 'CREDIT' ||
                 acct.acctType === 'INVESTMENT' ||
                 acct.acctType === 'AUTOLOAN' ||
-                acct.acctType === 'MORTGAGE')))
+                acct.acctType === 'MORTGAGE' ||
+                acct.acctType === 'OTHER' )))
         }
         getAccounts()
     }, [])
@@ -162,6 +163,18 @@ const CheckingTransactions = () => {
         await fetchTransactions(selectedAccount)
     }
 
+    // acctId, transDate, checkNumber, transAmt, description, transferAcctId
+    const updateCakeTransaction = async (transaction) => {
+        await fetch('http://localhost:8080/api/v1/update-cake-trans', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(transaction),
+        })
+        await fetchTransactions(selectedAccount)
+    }
+
     const updAcceptTransaction = async (transaction) => {
         await fetch('http://localhost:8080/api/v1/upd-accept-checking-trans', {
             method: 'POST',
@@ -227,7 +240,8 @@ const CheckingTransactions = () => {
                         acctName={selectedAccount}
                         selOptions={selOptions}
                         allOptions={allOptions}
-                        updateTransaction={updateTransaction} />
+                        updateTransaction={updateTransaction}
+                        updateCakeTransaction={updateCakeTransaction} />
 
                     <NewPagination
                         currentPage={currentPage}

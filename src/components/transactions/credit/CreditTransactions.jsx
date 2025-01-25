@@ -28,7 +28,8 @@ const CreditTransactions = () => {
                 acct.acctType === 'CREDIT' ||
                 acct.acctType === 'INVESTMENT' ||
                 acct.acctType === 'AUTOLOAN' ||
-                acct.acctType === 'MORTGAGE')))
+                acct.acctType === 'MORTGAGE' ||
+                acct.acctType === 'OTHER' )))
         }
         getAccounts()
     }, [])
@@ -255,11 +256,18 @@ const CreditTransactions = () => {
                         selOptions={selOptions}
                         allOptions={allOptions}
                         updateTransaction={updAcceptTransaction} />
-                    <Pagination
+                    {/* <Pagination
                         transactionsPerPage={transactionsPerPage}
                         totalTransactions={uploadedTransactions.length}
                         paginate={paginateUpd}
-                    />
+                    /> */}
+                    <NewPagination
+                        currentPage={currentUpdPage}
+                        totalCount={uploadedTransactions.length}
+                        siblingCount={1}
+                        pageSize={transactionsPerPage}
+                        onPageChange={paginateUpd} />
+
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>Close</Button>

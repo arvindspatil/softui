@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import EditCheckingTransaction from './EditCheckingTransaction'
 
-const CheckingTransactionTable = ({ transactions, deleteTransaction, acctName, selOptions, allOptions, updateTransaction }) => {
+const CheckingTransactionTable = ({ transactions, deleteTransaction, acctName, selOptions, allOptions, updateTransaction, updateCakeTransaction }) => {
 
     const [showEditTransaction, setShowEditTransaction] = useState(false)
         useEffect(() => {
@@ -64,6 +64,7 @@ const CheckingTransactionTable = ({ transactions, deleteTransaction, acctName, s
                 allOptions={updAllOptions}
                 hideEditTransaction={hideEditTransaction}
                 updateTransaction={updateTransaction}
+                updateCakeTransaction={updateCakeTransaction}
                 // onAddTransaction={addTransaction} 
                 />}
 

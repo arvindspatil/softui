@@ -107,6 +107,12 @@ const LeftTopNav = () => {
                             <Nav.Item>
                                 <Nav.Link href="/loan-transactions">Loan Accounts</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/other-transactions">Other Accounts</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/investment-acct-details">Investment Account Details</Nav.Link>
+                            </Nav.Item>  
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
@@ -119,10 +125,13 @@ const LeftTopNav = () => {
                     <Accordion.Collapse eventKey="4">
                         <Card.Body>
                             <Nav.Item>
-                                <Nav.Link href="/home">Add a Bill</Nav.Link>
+                                <Nav.Link href="/fetch-billschedules">Bill Schedules</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="/accounts">Pay a Bill</Nav.Link>
+                                <Nav.Link href="/fetch-allbills">View All Bills</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/sync-billschedule">Sync Bills</Nav.Link>
                             </Nav.Item>
                         </Card.Body>
                     </Accordion.Collapse>
@@ -148,6 +157,9 @@ const LeftTopNav = () => {
                         <Nav.Item>
                                 <Nav.Link href="/credit-upload-transactions">Credit Uploads</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/quotes-upload">Quotes Upload</Nav.Link>
+                            </Nav.Item>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
@@ -160,6 +172,15 @@ const LeftTopNav = () => {
                     <Accordion.Collapse eventKey="6">
                         <Card.Body>
                             <Nav.Item>
+                                <Nav.Link href="/gains">Gains</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/portfolio">Investment Portfolio</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/cash-flow">Cash Flow</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
                                 <Nav.Link href="/home">Savings Reports</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
@@ -167,9 +188,6 @@ const LeftTopNav = () => {
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link href="/accounts">Business Reports</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/accounts">Investment Reports</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link href="/accounts">Realized Gains</Nav.Link>
@@ -200,6 +218,21 @@ const LeftTopNav = () => {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle as={Link} variant="link" eventKey="8">
+                            Admin
+                        </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="8">
+                        <Card.Body>
+                            <Nav.Item>
+                                <Nav.Link href="/update-quotes">Refresh Quotes</Nav.Link>
+                            </Nav.Item>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+
             </Accordion>
         </>
     )

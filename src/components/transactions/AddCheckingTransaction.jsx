@@ -50,34 +50,6 @@ const AddCheckingTransaction = ({inAcctId, selOptions, allOptions, onAddTransact
                                 ))}
                             </Form.Control>
                         </Form.Group>
-
-
-
-            {/* <Form.Group as={Col}>
-                <Form.Label>Account</Form.Label>
-                <Form.Control custom as="select" 
-                onChange={(e) => setAcctId(e.target.value)}>
-                        <option
-                            key={acctId}
-                            value={acctId}
-                        >
-                        {'Select account...'}
-                        </option>
-
-                        {selOptions.map(item => (
-                            <option
-                                key={item.value}
-                                value={item.value}
-                            >
-                            {item.label}
-                            </option>
-                        ))}
-                </Form.Control>
-            </Form.Group> */}
-            {/* <Form.Group as={Col} controlId="formBasicPassword">
-                <Form.Label>Transaction Date</Form.Label>
-                <Form.Control type="text" onChange={(e) => setTransDate(e.target.value)}/>
-            </Form.Group> */}
             <Form.Group as={Col} controlId="formTransDate">
                             <Form.Label>Transaction Date</Form.Label>
                             <Form.Control type="date"
